@@ -20,6 +20,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var numberGuess: UITextField!
 
+    @IBOutlet weak var result: UILabel!
+    
+    @IBAction func onGuess(_ sender: Any) {
+     let rollIt = String(arc4random_uniform(10))
+        if numberGuess.text == rollIt {
+            result.text = "You're right"
+        }else{
+            result.text = "You're Wrong! It was " + rollIt + "."
+        }
+ 
+    }
 }
 
